@@ -102,3 +102,21 @@ $ ros2 run rviz2 rviz2 lanuch/pose_estimation.rviz
 ```
 
 *if Grid, Marker, Image no show up, go to "File -> Change config" and select the config file in the folder.*
+
+# FAQ
+
+*If you are making your own dockerfile from original repository*
+
+## No module named 'markupsafe'
+
+Go to https://pypi.org/project/MarkupSafe/ download the correct wheel file directly.
+
+## The manifest contains invalid XML
+
+Solution: https://github.com/NVIDIA-AI-IOT/ros2_trt_pose/issues/9
+
+Remove copyright header of these two file:
+
+```ros2_trt_pose/ros2_trt_pose/package.xml```
+
+```ros2_trt_pose/pose_msgs/package.xml```
