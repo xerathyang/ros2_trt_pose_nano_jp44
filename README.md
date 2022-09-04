@@ -21,6 +21,8 @@ $ sudo nvpmodel -m 0
 - Visualization markers
 - Launch file for RViz
 
+![alt text](images/output.png "Output")
+
 ## Build Image
 
 - Clone this repository
