@@ -38,15 +38,15 @@ $ cd ros2_trt_pose_nano_jp44
 $ sudo sh docker_build.sh
 ```
 
-## Run Docker
+## Run Container
 
-- Run Docker
+- Run container
 
 ```
 $ sudo sh docker_run.sh
 ```
 
-- Use Another Terminal to connect to docker
+- Use Another Terminal to connect to container
   
   *Note: You will need total 4 terminals to run all nodes.*
 
@@ -92,9 +92,13 @@ $ source install/local_setup.sh
 $ ros2 run rqt_topic rqt_topic
 ```
 
+*if value is "no monitored", check the box in front of the topic.*
+
 - Run ```rviz2```
 
 ```
 $ cd /ros2_ws/src/ros2_trt_pose/ros2_trt_pose
 $ ros2 run rviz2 rviz2 lanuch/pose_estimation.rviz
 ```
+
+*if Grid, Marker, Image no show up, go to "File -> Change config" and select the config file in the folder.*
