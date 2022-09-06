@@ -17,24 +17,6 @@ WORKDIR /workspace
 RUN locale-gen en_US en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 
-# change Python Version from 3.6 to 3.8
-#WORKDIR /usr/bin
-#RUN apt-get update \
- #   && apt-get install -y --no-install-recommends python3.8 \
- #   python3-distro \
- #   && unlink python3 \
- #   && ln -s python3.8 python3
-    # && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends software-properties-common \
-    # && add-apt-repository -y ppa:deadsnakes \
-    # && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends python3.8-venv \
-    # && apt-get clean \
-    # && rm -rf /var/lib/apt/lists/* \
-    # && : 
-
-# RUN python3.8 -m venv /venv
-# ENV PATH=/venv/bin:$PATH
-
-
 # add the ROS deb repo to the apt sources list
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -46,7 +28,7 @@ RUN apt-get update && \
 		gnupg2 \
 		lsb-release \
     && rm -rf /var/lib/apt/lists/*
-    
+
 RUN wget --no-check-certificate https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc && apt-key add ros.asc
 RUN sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
 

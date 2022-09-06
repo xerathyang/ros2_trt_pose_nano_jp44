@@ -78,7 +78,6 @@ If you are using ssh connecting, these command maybe required for GUI showing.
 
 ```
 $ export DISPLAY='<Your host IP>:0.0'
-
 ```
 
 - libGL error: MESA-LOADER: failed to open swrast (search paths /usr/lib/aarch64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri)
