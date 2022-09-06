@@ -70,6 +70,29 @@ $ colcon build
 $ source install/local_setup.sh
 ```
 
+## Important: Forwarding Grapic Through
+
+If you are using ssh connecting, these command maybe required for GUI showing.
+
+- MoTTY X11 proxy: Unsupported authorisation protocol
+
+```
+$ export DISPLAY='<Your host IP>:0.0'
+
+```
+
+- libGL error: MESA-LOADER: failed to open swrast (search paths /usr/lib/aarch64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri)
+libGL error: failed to load driver: swrast
+
+```
+$ apt install --reinstall libgl1-mesa-dri
+$ ln -sf /usr/lib/aarch64-linux-gnu/libdrm.so.2.4.0 /usr/lib/aarch64-linux-gnu/libdrm.so.2
+```
+
+Solution From:
+https://forums.developer.nvidia.com/t/swrast-again/155668
+https://www.thegeekstuff.com/2010/06/xhost-cannot-open-display/
+
 ## Run ros2_trt_pose
 
 - Run ```ros2_trt_pose``` node
@@ -92,7 +115,7 @@ $ source install/local_setup.sh
 $ ros2 run rqt_topic rqt_topic
 ```
 
-*if value is "no monitored", check the box in front of the topic.*
+if value is "no monitored", check the box in front of the topic.
 
 - Run ```rviz2```
 
@@ -101,7 +124,7 @@ $ cd /ros2_ws/src/ros2_trt_pose/ros2_trt_pose
 $ ros2 run rviz2 rviz2 lanuch/pose_estimation.rviz
 ```
 
-*if Grid, Marker, Image no show up, go to "File -> Change config" and select the config file in the folder.*
+if Grid, Marker, Image no show up, go to "File -> Change config" and select the config file in the folder.
 
 # FAQ
 
@@ -113,7 +136,7 @@ Go to https://pypi.org/project/MarkupSafe/ download the correct wheel file direc
 
 ## The manifest contains invalid XML
 
-Solution: https://github.com/NVIDIA-AI-IOT/ros2_trt_pose/issues/9
+Solution From: https://github.com/NVIDIA-AI-IOT/ros2_trt_pose/issues/9
 
 Remove copyright header of these two file:
 
