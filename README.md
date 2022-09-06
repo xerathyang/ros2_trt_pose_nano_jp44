@@ -67,7 +67,7 @@ $ rosdep install --from-paths src --ignore-src --rosdistro eloquent -y
 
 ```
 $ colcon build
-$ source install/local
+$ source install/local_setup.sh
 ```
 
 ## Run ros2_trt_pose
