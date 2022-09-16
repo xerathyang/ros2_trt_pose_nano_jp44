@@ -67,6 +67,7 @@ $ git clone https://github.com/xerathyang/ros2_trt_pose_nano_jp44.git
 - Build the docker image
 
 ```
+$ cd ~/ros2_trt_pose_nano_jp44
 $ sudo sh docker_build.sh
 ```
 
