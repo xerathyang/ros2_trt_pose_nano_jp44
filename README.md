@@ -70,9 +70,9 @@ $ colcon build
 $ source install/local_setup.sh
 ```
 
-## Important: Forwarding Grapic Through
+## Important  *FOR SSH USER* : Forwarding Graphic Through
 
-If you are using ssh connecting, these command maybe required for GUI showing.
+If you encounter some error while using ssh connect, these command maybe required for GUI showing.
 
 - MoTTY X11 proxy: Unsupported authorisation protocol
 
