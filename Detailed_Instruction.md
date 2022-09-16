@@ -1,7 +1,76 @@
 # DETAILED INSTRUCTION #
 * This guide will give step by step instruction to run the node and get output*
 
-## After you build the image ##
+## Start with brand new Jetson Nano ##
+After you complete the basic setting on the Jetson Nano, the following setting are used to make sure the process won't break down
+
+- Install require package, include text editor "nano" and swap "dphys-swapfile"
+
+```
+$ sudo apt-get update
+$ sudo apt-get install nano
+$ sudo apt-get install dphys-swapfile
+```
+
+- Open the file, find the *CONF_MAXSWAP*, set its value to 4096
+
+```
+$ sudo nano /sbin/dphys-swapfile
+```
+
+- Open the file, find the *CONF_SWAPSIZE*, set its value to 4096
+
+```
+$ sudo nano /etc/dphys-swapfile
+```
+
+- Now you can check swap size by below command
+
+```
+$ free -h
+```
+
+- Setting the build runtime
+
+```
+$ sudo nano /etc/docker/daemon.json
+```
+
+The file should be modified to look like this:
+
+```
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+
+    "default-runtime": "nvidia"
+}
+```
+
+
+- Then clone this repository
+
+```
+$ git clone https://github.com/xerathyang/ros2_trt_pose_nano_jp44.git
+```
+
+- Build the docker image
+
+```
+$ sudo sh docker_build.sh
+```
+
+- Or you got image file, then you can use docker load to import image
+
+```
+$ sudo docker load < "file name"
+```
+
+## After you finish with the image ##
 
 ### Open a terminal to run below command ###
 
@@ -87,4 +156,4 @@ $ rviz2
 ```
 
 - Change the config to see the information provide by ros2_trt_pose node
-Go to "File->Change config" on Left up side in the window, select "/ros2_ws/src/ros2_trt_pose/launch/pose-estimation.rviz" file and discard current config.
+Go to "File->Change config" on Left up side in the window, select "/ros2_ws/src/ros2_trt_pose/ros2_trt_pose/launch/pose-estimation.rviz" file and discard current config.
