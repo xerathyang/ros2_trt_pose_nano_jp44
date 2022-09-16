@@ -133,6 +133,12 @@ $ ros2 run image_tools cam2image
 $ sudo docker exec -it <container_name> bash
 ```
 
+- If you are using ssh connect, run below command
+
+```
+$ export DISPLAY='<Your host IP>:0.0'
+```
+
 - Use below command to setup and run rqt_topic node
 
 ```
@@ -147,6 +153,12 @@ $ ros2 run rqt_topic rqt_topic
 
 ```
 $ sudo docker exec -it <container_name> bash
+```
+
+- If you are using ssh connect, run below command
+
+```
+$ export DISPLAY='<Your host IP>:0.0'
 ```
 
 - Run rviz2 node
