@@ -1,6 +1,8 @@
 # ros2_trt_pose_nano_jp44
 Original Repository: https://github.com/NVIDIA-AI-IOT/ros2_trt_pose
 
+FOR DETAILED INSTRUCTION (STEP BY STEP), PLEASE GO TO https://github.com/xerathyang/ros2_trt_pose_nano_jp44/blob/main/Detailed_Instruction.md
+
 This dockerfile had been test under Jeston Nano, Jetpack4.4.
 
 All dependencies will be installed during the docker building.
