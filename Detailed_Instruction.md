@@ -24,6 +24,12 @@ $ sudo nano /sbin/dphys-swapfile
 $ sudo nano /etc/dphys-swapfile
 ```
 
+- Restart the swap service to make the setup become effective
+
+```
+$ sudo service dphys-swapfile restart
+```
+
 - Now you can check swap size by below command
 
 ```
